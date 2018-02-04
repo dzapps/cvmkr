@@ -2,7 +2,8 @@
 
 function createContent(){
 
-	var docDefinition = {
+	try{
+		var docDefinition = {
 	 	 pageSize: 'A4',
 	 	 pageMargins: [40, 40, 40, 40],
 	 	 footer: function(currentPage, pageCount) { 
@@ -49,6 +50,19 @@ function createContent(){
 						, style: 'small'}
 					]
 				},
+				{ 	alignment: 'justify',
+					columns:[
+						{
+							color: 'black',
+							text: [
+								'\n' + 'Skills:',
+							],
+							bold: true,
+							fontSize:14
+						},
+						{text : '\n' + userData.skills, style:'small'}
+					]					
+				},
 				{
 					canvas:[ 
 					    {
@@ -64,13 +78,23 @@ function createContent(){
 						{
 							color: 'black',
 							text: [
-								'\n' + 'Skills:',
+								'\n' + 'Objective:',
 							],
 							bold: true,
 							fontSize:14
 						},
-						{text : '\n' + userData.skills, style:'small'}
+						{text : '\n' + userData.objective, style:'small'}
 					]					
+				},
+				{
+					canvas:[ 
+					    {
+							type: 'line',
+							x1: 0, y1: 20,
+							x2: 500, y2: 20,
+							lineWidth: 3
+						}	
+					]
 				}
 				// {
 			 //      // for numbered lists set the ol key
@@ -95,9 +119,9 @@ function createContent(){
 					italics: true
 				},
 				small: {
-					fontSize: 12,
+					fontSize: 11,
 					alignment: 'left',
-					color: 'gray'
+					color: 'black'
 				}
 			}
 		};
@@ -105,8 +129,12 @@ function createContent(){
 	 //pdfMake.createPdf(docDefinition).print();
 	  // open the PDF in a new window
 	 //pdfMake.createPdf(docDefinition).open();
-
-	 // download the PDF
-	 pdfMake.createPdf(docDefinition).download('optionalName.pdf');}
+	}
+	catch(ex){
+		console.log(ex);
+	}
+		// download the PDF
+	pdfMake.createPdf(docDefinition).download(userData.name + 'Resume' + '.pdf');
+	hideLoader();
 }
  

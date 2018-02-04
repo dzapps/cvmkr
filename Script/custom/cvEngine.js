@@ -46,19 +46,18 @@ function processData(){
 	showLoader();
 	getUserInformation();
 	getSkills();
-	//getOjbective();
+	getObjective();
 	//getEducation();
 	//getWorkexp();
 	//getCert();
 	//getHobbies();
-	if(!userData.name && !userData.email  &&userData.contactNo ){
+	if(!userData.name && !userData.email ){
      alert("Please enter User Details !");
      	hideLoader();
      return;
 	}
 	//prepareJson();
 	createContent();
-	hideLoader();
  }
 
 function getUserInformation(){
@@ -85,27 +84,5 @@ function getSkills(){
 function getObjective(){
 	userData.objective = $('#inputObjective').val();
 }
-function prepareJson(){
-    //download document
-	var doc = new jsPDF();
-    try{
 
-    doc.text('Name: ' + ' ' + userData.name, 10, 10);
-
-	doc.text('Email: ' + ' ' + userData.email, 10, 20);
-
-	doc.text('Phone No.: ' + ' ' + userData.contactNo, 10, 30);
-	doc.text('Gender: ' + ' ' + userData.gender, 10, 40);
-	doc.text('Address: ' + ' ' + userData.address.address1, 10, 50);
-	doc.text('City: ' + ' ' + userData.address.city, 10, 60);
-	doc.text('Pincode: ' + ' ' + userData.address.zip, 10, 70);
-
-    }
-	catch(ex){
-		console.log('Error : '+ ex);
-		alert(ex);
-	}
-	hideLoader();
-	doc.save('Resume_' + userData.name + '.pdf');
-}
 

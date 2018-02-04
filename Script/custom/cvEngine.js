@@ -14,17 +14,18 @@ function test(){
 
 function getCv(){
 	//alert("get Cv is called ");
-	processData();
+	processData();		
+	
 }
 
+/*start show hide loader ***/
 function showLoader(){
 	$('#overlay').css({
 		'display':'block'
 	});
 	$(".loader").css({
 		'display':'block'
-	});
-  
+	}); 
 }
 function hideLoader(){
 	$('#overlay').css({
@@ -33,8 +34,8 @@ function hideLoader(){
 	$(".loader").css({
 		'display':'none'
 	});
-
 }
+/**************************/
 
 
 
@@ -44,18 +45,19 @@ userData = {};
 function processData(){
 	showLoader();
 	getUserInformation();
-	//getSkills();
+	getSkills();
 	//getOjbective();
 	//getEducation();
 	//getWorkexp();
 	//getCert();
 	//getHobbies();
-	if(!userData.name){
+	if(!userData.name && !userData.email  &&userData.contactNo ){
      alert("Please enter User Details !");
      	hideLoader();
      return;
 	}
-	prepareJson();
+	//prepareJson();
+	createContent();
  }
 
 function getUserInformation(){

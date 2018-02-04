@@ -51,7 +51,7 @@ hr{
   z-index:9999;
   top:40%;
   left:47%;
-  display:none;
+  display:block;
   position: absolute;
   -webkit-animation: spin 2s linear infinite; /* Safari */
   animation: spin 2s linear infinite;
@@ -70,7 +70,7 @@ hr{
 
 #overlay {
     position: fixed; /* Sit on top of the page content */
-    display: none; /* Hidden by default */
+    display: block; /* Hidden by default */
     width: 100%; /* Full width (cover the whole page) */
     height: 100%; /* Full height (cover the whole page) */
     top: 0;

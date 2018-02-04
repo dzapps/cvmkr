@@ -1,5 +1,13 @@
 
 
+//on window load
+$(window).on('load', function(){
+	hideLoader();
+});
+
+
+
+
 function test(){
 	alert("Hi ... save feature will be added soon. ");
 }
@@ -27,6 +35,8 @@ function hideLoader(){
 	});
 
 }
+
+
 
 
 userData = {};

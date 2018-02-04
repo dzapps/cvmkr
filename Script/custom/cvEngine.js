@@ -58,6 +58,7 @@ function processData(){
 	}
 	//prepareJson();
 	createContent();
+	hideLoader();
  }
 
 function getUserInformation(){

@@ -9,11 +9,11 @@ p{
 
 }
 footer{
-	position: absolute;
+	position: relative;
 	display:block;
 	text-align: center;
 	font-style: italic;
-	bottom:0px;
+	bottom:0;
 	left:0;
 	right:0;
 }
@@ -82,6 +82,35 @@ hr{
     cursor: pointer; /* Add a pointer on hover */
 }
 
+.note{
+    display: inline-flex;
+    margin-left: 14px;
+}
+.addNewCourse, .addNewExperience{
+    margin-left: 15px;
+    margin-top: 7px;
+}
+
+.eduHeader, .wxpHeader{
+    border: 1px solid grey;
+    display: block;
+    background-color: #eee;
+    padding: 2px 0px 3px 15px;
+    text-transform: capitalize;
+}
+.eduForm, .wxpForm{
+    border:1px solid grey;
+    overflow: hidden;
+}
+.removeEduForm, .removeWxpForm{
+    float: right;
+    margin-right: 11px;
+    color: black;
+    background-color: white;
+    padding: 0px 2px 0px 1px;
+    border: 1px solid black;
+    cursor:pointer;
+}
 
  /* For mobile phones: */
 @media only screen and (max-width: 768px) {

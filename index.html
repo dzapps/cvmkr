@@ -81,11 +81,11 @@
 					  <div class="form-row">
 					    <div class="form-group col-md-6">
 					      <label for="userName">Full Name</label>
-					      <input type="text" max-length="100" class="form-control" id="userName" placeholder="Enter Full Name">
+					      <input type="text" max-length="100" class="form-control" id="userName" placeholder="Enter Full Name" autocomplete="on" >
 					    </div>
 					    <div class="form-group col-md-6">
 					      <label for="userEmailId">Email</label>
-					      <input type="email" class="form-control" id="userEmailId" placeholder="Enter Email Address">
+					      <input type="email" class="form-control" id="userEmailId" placeholder="Enter Email Address" autocomplete="on" >
 					    </div>
 					  </div>
 					  <div class="form-group">
@@ -102,7 +102,7 @@
 					  	</div>
 					  	<div class="form-group col-md-6">
 						    <label for="userContactNo">Phone Number</label>
-						    <input type="number" maxlength="12" class="form-control" id="userContactNo" placeholder="Enter Phone Number">
+						    <input type="number" maxlength="12" class="form-control" id="userContactNo" placeholder="Enter Phone Number" autocomplete="on" >
 						 </div>
 					  </div>
 					  <div class="form-group">
@@ -135,7 +135,7 @@
 					    <div class="form-row">
 						    <div class="form-group col-md-6">
 						      <label for="inputSkills">Skills</label>
-						      <input type="text" max-length="100" class="form-control" id="inputSkills" placeholder="Enter your skill">
+						      <textarea type="text" max-length="100" class="form-control" id="inputSkills" placeholder="Enter your skill"></textarea>
 						    </div>
 						</div>
 					</form>
@@ -147,15 +147,35 @@
 					    <div class="form-row">
 						    <div class="form-group col-md-6">
 						      <label for="inputObjective">Objective</label>
-						      <input type="text" max-length="180" class="form-control" id="inputObjective" placeholder="Enter your objective">
+						      <textarea type="text" max-length="180" class="form-control" id="inputObjective" placeholder="Enter your objective"></textarea>
 						    </div>
 						</div>
 					</form>
+					<!-- note section for freshers-->
+					<div class="note">
+        				<strong>Tip: </strong> 
+        				<span>&nbsp; Write a short note telling about what skills, knowledge and abilites you have that will help the company achieve its goals. 
+        				</span>
+    				</div>
 	         	</div>
 	         	<!-- -->
 	         	<!-- Education section -->
 	         	<div id="edu" class="tab-pane fade in ">
-	         		<form>
+	         		
+					<!-- add new course section-->
+					<div class='eduContainer'></div>
+					<div class="addNewCourse">
+				        <button class="btn btn-default" id="addNewBlankCourse">
+				    		<i class="glyphicon glyphicon-plus"></i>
+				    	</button>
+				    </div>
+				    <!-- hidden Edu form-->
+				    <form class="hidden" id='hiddenEduForm'>
+				    	  <div class="eduHeader">1. Education
+					    	  <span class="removeEduForm" title="delete">
+					    	  	<i class="glyphicon glyphicon-trash"></i>
+					    	  </span>
+				    	  </div>
 						  <div class="form-row">
 							    <div class="form-group col-md-6">
 							      <label for="inputCourse">Course Name</label>
@@ -183,15 +203,30 @@
 							    </div>
 							     <div class="form-group col-md-6">
 							      <label for="eduOther">Other Information</label>
-							      <input type="text" max-length="140" class="form-control" id="eduOther">
+							      <input type="text" max-length="140" class="form-control" id="eduOther"></input>
 							    </div>
 						  </div>
 					</form>
-	         	</div>
+					<!-- -->
+		        </div>
 	         	<!--  -->
 	         	<!-- Work Experience section -->
 	         	<div id="workExp" class="tab-pane fade in ">
-	         		<form>
+	         		
+					<!-- add new WorkExp section-->
+					<div class='wxpContainer'></div>
+					<div class="addNewExperience">
+				        <button class="btn btn-default" id="addNewBlankExperience">
+				    		<i class="glyphicon glyphicon-plus"></i>
+				    	</button>
+				    </div>
+				    <!-- hidden Wxp Form-->
+				    <form class="hidden" id="hiddenWxpForm">
+				    	  <div class="wxpHeader">1. Work Experience
+					    	  <span class="removeWxpForm" title="delete">
+					    	  	<i class="glyphicon glyphicon-trash"></i>
+					    	  </span>
+				    	  </div>
 						  <div class="form-row">
 							    <div class="form-group col-md-6">
 							      <label for="jobTitle">Job Title </label>
@@ -212,13 +247,22 @@
 							      <input type="text" max-length="100" class="form-control" id="compEndDate" placeholder="Enter End Date">
 							    </div>
 						  </div>
-						  <div class="form-row">							    
+						  <div class="form-row">
 							     <div class="form-group col-md-6">
-							      <label for="compOther">Other Information</label>
-							      <input type="text" max-length="140" class="form-control" id="compOther">
-							    </div>
+							        <label for="compOther">Other Information</label>
+							        <textarea type="text" max-length="140" class="form-control" id="compOther" placeholder="Enter work details">
+							        </textarea>
+							     </div>
 						  </div>
 					</form>
+				    <!-- -->
+					<!-- note section for freshers-->
+					<div class="note">
+        				<strong>Note: </strong> 
+        				<span>&nbsp; If You are a fresher then enter your project details in <i>Other Information</i> section and keep other fields blank.
+        				</span>
+    				</div>
+    				<!-- -->
 	         	</div>
 	         	<!--  -->
 	         	<!-- Certification section -->
@@ -227,7 +271,7 @@
 					    <div class="form-row">
 						    <div class="form-group col-md-6">
 						      <label for="inputcert">Certification</label>
-						      <input type="text" max-length="180" class="form-control" id="inputHobbies" placeholder="Enter your Certifications">
+						      <textarea type="text" max-length="180" class="form-control" id="inputcert" placeholder="Enter your Certifications"></textarea> 
 						    </div>
 						</div>
 					</form>
@@ -239,7 +283,7 @@
 					    <div class="form-row">
 						    <div class="form-group col-md-6">
 						      <label for="inputHobbies">Hobbies</label>
-						      <input type="text" max-length="180" class="form-control" id="inputHobbies" placeholder="Enter your hobbies">
+						      <textarea type="text" max-length="180" class="form-control" id="inputHobbies" placeholder="Enter your hobbies"></textarea>
 						    </div>
 						</div>
 					</form>
@@ -256,7 +300,7 @@
 		   <address>contact us: &nbsp;
 			<a href="mailto:pinakincv@gmail.com">pinakincv@gmail.com</a>
 			<br>
-			<span>from India with <i class="glyphicon glyphicon-heart heart-icon"></i>
+			<span>made in India with <i class="glyphicon glyphicon-heart heart-icon"></i>
 			</span>
 			<br>
 			<span><strong>Note:</strong> We do not store or transfer any user data<span>

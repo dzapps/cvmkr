@@ -2,6 +2,7 @@
 
 function createContent(){
 
+
 	try{
 		var docDefinition = {
 	 	 pageSize: 'A4',
@@ -50,6 +51,16 @@ function createContent(){
 						, style: 'small'}
 					]
 				},
+				{
+					canvas:[ 
+					    {
+							type: 'line',
+							x1: 0, y1: 20,
+							x2: 500, y2: 20,
+							lineWidth: 2
+						}	
+					]
+				},
 				{ 	alignment: 'justify',
 					columns:[
 						{
@@ -69,7 +80,7 @@ function createContent(){
 							type: 'line',
 							x1: 0, y1: 20,
 							x2: 500, y2: 20,
-							lineWidth: 3
+							lineWidth: 2
 						}	
 					]
 				},
@@ -92,19 +103,106 @@ function createContent(){
 							type: 'line',
 							x1: 0, y1: 20,
 							x2: 500, y2: 20,
-							lineWidth: 3
+							lineWidth: 2
 						}	
 					]
-				}
-				// {
-			 //      // for numbered lists set the ol key
-			 //      type: 'square',
-			 //      ul: [
-			 //        'Item 1',
-			 //        'Item 2',
-			 //        'Item 3'
-			 //      ]
-			 //    }			  
+				},
+				{ 	alignment: 'justify',
+					columns:[
+						{
+							color: 'black',
+							text: [
+								'\n' + 'Education:',
+							],
+							bold: true,
+							fontSize:14
+						},
+						{text : '\n' + getEduDetails(), style:'small'}
+					]					
+				},
+				{
+					canvas:[ 
+					    {
+							type: 'line',
+							x1: 0, y1: 20,
+							x2: 500, y2: 20,
+							lineWidth: 2
+						}	
+					]
+				},
+				{ 	alignment: 'justify',
+					columns:[
+						{
+							color: 'black',
+							text: [
+								'\n' + 'Work Experience:',
+							],
+							bold: true,
+							fontSize:14
+						},
+						{text : '\n' + getWorkExp(), style:'small'}
+					]					
+				},
+				{
+					canvas:[ 
+					    {
+							type: 'line',
+							x1: 0, y1: 20,
+							x2: 500, y2: 20,
+							lineWidth: 2
+						}	
+					]
+				},
+				{ 	alignment: 'justify',
+					columns:[
+						{
+							color: 'black',
+							text: [
+								'\n' + 'Certifications:',
+							],
+							bold: true,
+							fontSize:14
+						},
+						{text : '\n' + getCertification(), style:'small'}
+					]					
+				},
+				{
+					canvas:[ 
+					    {
+							type: 'line',
+							x1: 0, y1: 20,
+							x2: 500, y2: 20,
+							lineWidth: 2
+						}	
+					]
+				},
+				{ 	alignment: 'justify',
+					columns:[
+						{
+							color: 'black',
+							text: [
+								'\n' + 'Hobbies:',
+							],
+							bold: true,
+							fontSize:14
+						},
+						{text : '\n' + getHobbies(), style:'small'}
+					]					
+				},
+				{
+					canvas:[ 
+					    {
+							type: 'line',
+							x1: 0, y1: 20,
+							x2: 500, y2: 20,
+							lineWidth: 2
+						}	
+					]
+				},
+				{
+					text : '\n' + 'I hereby certify that the above information given are true and correct as to the best of my knowledge. ',
+					style:'declaration'
+				}	  		  
 			],
 			styles: {
 				header: {
@@ -122,6 +220,11 @@ function createContent(){
 					fontSize: 11,
 					alignment: 'left',
 					color: 'black'
+				},
+				declaration:{
+					fontSize: 11,
+					alignment: 'left',
+					color:'black'
 				}
 			}
 		};
@@ -134,7 +237,7 @@ function createContent(){
 		console.log(ex);
 	}
 		// download the PDF
-	pdfMake.createPdf(docDefinition).download(userData.name + 'Resume' + '.pdf');
+	pdfMake.createPdf(docDefinition).download('Resume' + '.pdf');
 	hideLoader();
 }
  

@@ -215,7 +215,12 @@ function getWorkExp(){
 		workExp = wxpModelListObj.jobTitle;
 		workExp = workExp + '\n' + wxpModelListObj.companyName;
 		workExp = workExp + '\n' + getFormattedDate(wxpModelListObj.compStartDate, wxpModelListObj.compEndDate);
-		workExp = workExp + '\n' + wxpModelListObj.compOther;
+		
+		if(wxpModelListObj.compOther.trim()){
+			workExp = workExp + '\n';
+			workExp = workExp + '\n' + wxpModelListObj.compOther;
+		}
+		
 		workExp = workExp + '\n';
 		if(wxpModelListObj.compOther.trim())
 		workExp = workExp + '\n';

@@ -185,13 +185,15 @@ function getEduDetails(){
     var eduList = [];
     for(i=0; i<userData.eduModelList.length; i++){
 
-    	edu = userData.eduModelList[i].crName;	   
-	    edu = edu + '\n' +  userData.eduModelList[i].insName;
-	    edu = edu + '\n' +  userData.eduModelList[i].startDate + ' - ' + userData.eduModelList[i].endDate;
-	    edu = edu + '\n' +  userData.eduModelList[i].score;
-	    edu = edu + '\n' +  userData.eduModelList[i].other ;
+    	var eduModelListObj = userData.eduModelList[i];
+
+    	edu = eduModelListObj.crName;	   
+	    edu = edu + '\n' +  eduModelListObj.insName;
+	    edu = edu + '\n' +  getFormattedDate(eduModelListObj.startDate, eduModelListObj.endDate);
+	    edu = edu + '\n' +  eduModelListObj.score;
+	    edu = edu + '\n' +  eduModelListObj.other ;
 	    edu = edu + '\n';
-	    if(userData.eduModelList[i].other.trim())
+	    if(eduModelListObj.other.trim())
 	    edu = edu + '\n';
 
 	    eduList.push(edu);
@@ -208,14 +210,14 @@ function getWorkExp(){
 	var workExp = ''; 
 	var wxpList = [];
 	for(i=0; i<userData.wxpModelList.length; i++){
+		var  wxpModelListObj = userData.wxpModelList[i];
 
-		workExp = userData.wxpModelList[i].jobTitle;
-		workExp = workExp + '\n' + userData.wxpModelList[i].companyName;
-		workExp = workExp + '\n' + userData.wxpModelList[i].compStartDate;
-		workExp = workExp + '\n' + userData.wxpModelList[i].compEndDate;
-		workExp = workExp + '\n' + userData.wxpModelList[i].compOther;
+		workExp = wxpModelListObj.jobTitle;
+		workExp = workExp + '\n' + wxpModelListObj.companyName;
+		workExp = workExp + '\n' + getFormattedDate(wxpModelListObj.compStartDate, wxpModelListObj.compEndDate);
+		workExp = workExp + '\n' + wxpModelListObj.compOther;
 		workExp = workExp + '\n';
-		if(userData.wxpModelList[i].compOther.trim())
+		if(wxpModelListObj.compOther.trim())
 		workExp = workExp + '\n';
 
 		wxpList.push(workExp);
@@ -241,7 +243,20 @@ function getHobbies(){
 
 	return hobbies;
 }
-
+/************************************/
+//get formatted date 
+function getFormattedDate(startDate, endDate){
+	if(startDate.trim()){
+		if(endDate.trim()){
+			return startDate + ' - ' + endDate;
+		}else{
+			return startDate;
+		}		
+	}
+	else{
+		return endDate;
+	}
+}
 /************************************/
 //get Education list
 function getEduModelList(){

@@ -12,8 +12,7 @@ function createContent(){
 	 	 		alignment: 'center',
 	 	 		text: currentPage.toString()
 	 	 	 }
-	 	 	},
-	     	 
+	 	 	}, 
 			content: [				
 				{
 					canvas: [
@@ -61,17 +60,16 @@ function createContent(){
 						}	
 					]
 				},
+				{ 	text: '\n' },
 				{ 	alignment: 'justify',
 					columns:[
 						{
 							color: 'black',
-							text: [
-								'\n' + 'Skills:',
-							],
+							text: ['Skills:'],
 							bold: true,
 							fontSize:14
 						},
-						{text : '\n' + userData.skills, style:'small'}
+						{text : userData.skills, style:'small'}
 					]					
 				},
 				{
@@ -84,17 +82,16 @@ function createContent(){
 						}	
 					]
 				},
+				{ 	text: '\n' },
 				{ 	alignment: 'justify',
 					columns:[
 						{
 							color: 'black',
-							text: [
-								'\n' + 'Objective:',
-							],
+							text: ['Objective:'],
 							bold: true,
 							fontSize:14
 						},
-						{text : '\n' + userData.objective, style:'small'}
+						{text : userData.objective, style:'small'}
 					]					
 				},
 				{
@@ -107,17 +104,16 @@ function createContent(){
 						}	
 					]
 				},
+				{ 	text: '\n' },
 				{ 	alignment: 'justify',
 					columns:[
 						{
 							color: 'black',
-							text: [
-								'\n' + 'Education:',
-							],
+							text: ['Education:'],
 							bold: true,
 							fontSize:14
-						},
-						{text : '\n' + getEduDetails(), style:'small'}
+						},						
+						{ ul : getEduDetails(), style:'small'}
 					]					
 				},
 				{
@@ -130,17 +126,16 @@ function createContent(){
 						}	
 					]
 				},
+				{ 	text: '\n' },
 				{ 	alignment: 'justify',
 					columns:[
 						{
 							color: 'black',
-							text: [
-								'\n' + 'Work Experience:',
-							],
+							text: ['Work Experience:'],
 							bold: true,
 							fontSize:14
 						},
-						{text : '\n' + getWorkExp(), style:'small'}
+						{ ul : getWorkExp(), style:'small'}
 					]					
 				},
 				{
@@ -153,17 +148,16 @@ function createContent(){
 						}	
 					]
 				},
+				{ 	text: '\n' },
 				{ 	alignment: 'justify',
 					columns:[
 						{
 							color: 'black',
-							text: [
-								'\n' + 'Certifications:',
-							],
+							text: ['Certifications:'],
 							bold: true,
 							fontSize:14
 						},
-						{text : '\n' + getCertification(), style:'small'}
+						{text : getCertification(), style:'small'}
 					]					
 				},
 				{
@@ -176,17 +170,16 @@ function createContent(){
 						}	
 					]
 				},
+				{ 	text: '\n' },
 				{ 	alignment: 'justify',
 					columns:[
 						{
 							color: 'black',
-							text: [
-								'\n' + 'Hobbies:',
-							],
+							text: ['Hobbies:'],
 							bold: true,
 							fontSize:14
 						},
-						{text : '\n' + getHobbies(), style:'small'}
+						{text : getHobbies(), style:'small'}
 					]					
 				},
 				{
@@ -199,8 +192,9 @@ function createContent(){
 						}	
 					]
 				},
+				{ 	text: '\n' },
 				{
-					text : '\n' + 'I hereby certify that the above information given are true and correct as to the best of my knowledge. ',
+					text : 'I hereby certify that the above information given are true and correct as to the best of my knowledge. ',
 					style:'declaration'
 				}	  		  
 			],

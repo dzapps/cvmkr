@@ -182,16 +182,21 @@ function getEduDetails(){
     
     //create education data for pdf
     var edu = '';
+    var eduList = [];
     for(i=0; i<userData.eduModelList.length; i++){
 
-    	edu = edu + (i+1) + '. ' + userData.eduModelList[i].crName;	   
+    	edu = userData.eduModelList[i].crName;	   
 	    edu = edu + '\n' +  userData.eduModelList[i].insName;
 	    edu = edu + '\n' +  userData.eduModelList[i].startDate + ' - ' + userData.eduModelList[i].endDate;
 	    edu = edu + '\n' +  userData.eduModelList[i].score;
 	    edu = edu + '\n' +  userData.eduModelList[i].other ;
 	    edu = edu + '\n';
+	    if(userData.eduModelList[i].other.trim())
+	    edu = edu + '\n';
+
+	    eduList.push(edu);
     }
-    return edu;
+    return eduList;
 }
 
 function getWorkExp(){
@@ -201,16 +206,21 @@ function getWorkExp(){
 
 	//create work exp data for pdf
 	var workExp = ''; 
+	var wxpList = [];
 	for(i=0; i<userData.wxpModelList.length; i++){
 
-		workExp = workExp + (i+1) +'. ' + userData.wxpModelList[i].jobTitle;
+		workExp = userData.wxpModelList[i].jobTitle;
 		workExp = workExp + '\n' + userData.wxpModelList[i].companyName;
 		workExp = workExp + '\n' + userData.wxpModelList[i].compStartDate;
 		workExp = workExp + '\n' + userData.wxpModelList[i].compEndDate;
 		workExp = workExp + '\n' + userData.wxpModelList[i].compOther;
 		workExp = workExp + '\n';
+		if(userData.wxpModelList[i].compOther.trim())
+		workExp = workExp + '\n';
+
+		wxpList.push(workExp);
 	}
-	return workExp;
+	return wxpList;
 }
 
 function getCertification() {

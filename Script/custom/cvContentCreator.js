@@ -194,8 +194,11 @@ function createContent(){
 				},
 				{ 	text: '\n' },
 				{
-					text : 'I hereby certify that the above information given are true and correct as to the best of my knowledge. ',
-					style:'declaration'
+					text: [
+					       { text: 'Declaration: ', color:'black', fontSize:14, bold:true, fontSize:14  },
+						   { text : getDeclaration(),
+						     style:'declaration'}
+					]
 				}	  		  
 			],
 			styles: {

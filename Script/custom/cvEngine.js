@@ -248,6 +248,10 @@ function getHobbies(){
 
 	return hobbies;
 }
+function getDeclaration(){
+	var declaration = 'I hereby certify that the above information given are true and correct as to the best of my knowledge.';
+	return declaration;
+}
 /************************************/
 //get formatted date 
 function getFormattedDate(startDate, endDate){

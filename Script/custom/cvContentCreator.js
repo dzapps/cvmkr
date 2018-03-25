@@ -22,7 +22,8 @@ function createContent(){
 							//margin:30,
 							x1: 0, y1: 05,
 							x2: 500, y2: 05,
-							lineWidth: 4
+							lineWidth: 4,
+							lineColor: 'gray'
 						}										
 					]
 				},
@@ -37,7 +38,8 @@ function createContent(){
 							type: 'line',
 							x1: 0, y1: 20,
 							x2: 500, y2: 20,
-							lineWidth: 4
+							lineWidth: 4,
+							lineColor: 'gray'
 						}	
 					]
 				},
@@ -59,7 +61,8 @@ function createContent(){
 							type: 'line',
 							x1: 0, y1: 20,
 							x2: 500, y2: 20,
-							lineWidth: 2
+							lineWidth: 2,
+							lineColor: 'gray'
 						}	
 					]
 				},
@@ -81,7 +84,8 @@ function createContent(){
 							type: 'line',
 							x1: 0, y1: 20,
 							x2: 500, y2: 20,
-							lineWidth: 2
+							lineWidth: 2,
+							lineColor: 'gray'
 						}	
 					]
 				},
@@ -103,7 +107,8 @@ function createContent(){
 							type: 'line',
 							x1: 0, y1: 20,
 							x2: 500, y2: 20,
-							lineWidth: 2
+							lineWidth: 2,
+							lineColor: 'gray'
 						}	
 					]
 				},
@@ -125,7 +130,8 @@ function createContent(){
 							type: 'line',
 							x1: 0, y1: 20,
 							x2: 500, y2: 20,
-							lineWidth: 2
+							lineWidth: 2,
+							lineColor: 'gray'
 						}	
 					]
 				},
@@ -147,7 +153,8 @@ function createContent(){
 							type: 'line',
 							x1: 0, y1: 20,
 							x2: 500, y2: 20,
-							lineWidth: 2
+							lineWidth: 2,
+							lineColor: 'gray'
 						}	
 					]
 				},
@@ -169,7 +176,8 @@ function createContent(){
 							type: 'line',
 							x1: 0, y1: 20,
 							x2: 500, y2: 20,
-							lineWidth: 2
+							lineWidth: 2,
+							lineColor: 'gray'
 						}	
 					]
 				},
@@ -191,7 +199,8 @@ function createContent(){
 							type: 'line',
 							x1: 0, y1: 20,
 							x2: 500, y2: 20,
-							lineWidth: 2
+							lineWidth: 2,
+							lineColor: 'gray'
 						}	
 					]
 				},

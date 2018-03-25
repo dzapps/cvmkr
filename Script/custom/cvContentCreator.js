@@ -27,7 +27,10 @@ function createContent(){
 					]
 				},
 				{text: '\n ' + userData.name, style: 'header'},
-				{text:  userData.email, style: 'small'},
+				{text: [ {text:'Email: ', style: 'small'},
+					     {text: userData.email, style: 'small'}
+					]
+				},
 				{
 					canvas:[ 
 					    {
@@ -41,7 +44,7 @@ function createContent(){
 				{
 					alignment: 'justify',
 					columns:[
-						{text:  '\n' + userData.address.address1 + '\n'+ 
+						{text:  '\n' + 'Address: ' + userData.address.address1 + '\n'+ 
 						       userData.address.city + ' - ' + userData.address.zip + '\n'+ 
 						       userData.address.state + '\n'
 						, style: 'small'},
@@ -195,7 +198,7 @@ function createContent(){
 				{ 	text: '\n' },
 				{
 					text: [
-					       { text: 'Declaration: ', color:'black', fontSize:14, bold:true, fontSize:14  },
+					       { text: 'Declaration: ', style: 'subheader2' },
 						   { text : getDeclaration(),
 						     style:'declaration'}
 					]
@@ -222,6 +225,11 @@ function createContent(){
 					fontSize: 11,
 					alignment: 'left',
 					color:'black'
+				},
+				subheader2:{
+					fontSize: 14,
+					color: 'black',
+					bold: true
 				}
 			}
 		};
